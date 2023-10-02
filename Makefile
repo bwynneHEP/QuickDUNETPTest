@@ -9,7 +9,7 @@ ROOTLIBS     = #-L$(ROOTSYS)/lib $(shell $(ROOTSYS)/bin/root-config --libs)
 CXX          = g++
 RM           = rm -f
 
-CXXFLAGS     = -O0 -g -fPIC -funroll-loops -DHELLO_BEN -Wall
+CXXFLAGS     = -O0 -g -fPIC -funroll-loops -DHELLO_BEN -Wall -std=c++17
 
 EXENAME		= TPTest
 SRCEXT   	= cpp
