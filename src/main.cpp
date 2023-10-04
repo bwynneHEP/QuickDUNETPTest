@@ -4,7 +4,7 @@
 #include <fstream>
 
 #include <chrono>
-using Clock = std::chrono::steady_clock;
+using namespace std::chrono;
 
 #include "triggeralgs/TriggerPrimitive.hpp"
 #include "triggeralgs/TriggerActivity.hpp"
@@ -60,11 +60,11 @@ int main( int argc, char * argv[] )
     std::vector< TriggerActivity > output;
 
     // Time the algorithm
-    auto startTime = Clock::now();
+    auto startTime = steady_clock::now();
     algorithmInstance( tp, output );
-    auto endTime = Clock::now();
+    auto endTime = steady_clock::now();
 
-    float workTime = (float)std::chrono::duration_cast<std::chrono::nanoseconds>( endTime - startTime ).count();
+    float workTime = (float)duration_cast< nanoseconds >( endTime - startTime ).count();
     totalTime += workTime;
     if ( workTime > maxTime ) maxTime = workTime;
     if ( workTime < minTime ) minTime = workTime;
