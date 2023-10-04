@@ -135,7 +135,7 @@ TriggerActivityMakerMultiProng::longest_activity() const
   // the adjacency count. This accounts for things like dead channels / missed TPs. The 
   // maximum gap is 4 which comes from tuning on December 2021 coldbox data, and June 2022 
   // coldbox runs.
-  for (ulong i = 0; i < hitList.size(); ++i) {
+  for (unsigned long i = 0; i < hitList.size(); ++i) {
 
     next = (i + 1) % hitList.size(); // Loops back when outside of channel list range
     channel = hitList.at(i).channel;
